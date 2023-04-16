@@ -18,9 +18,9 @@ This design pattern supports loose coupling between objects, making it easy to a
 
 ### **The key participants in the Observer Design Pattern:**
 1.	**The Subject:** the Subject keeps a detailed list of its dependents (the Observers/Subscribers) and notifies them of any changes to its state.  This is implemented as an interface so that any Concrete implementation represents the Object whose state would be required to change.  There are three important behaviour that all concrete implementations must provide:
-&nbsp; &nbsp; &nbsp; &nbsp; * register Observer: provide a means to enlist Observers to be notified when a change of state of the Subject occurs.
-&nbsp; &nbsp; &nbsp; &nbsp; * remove Observer: provide a means to delist Observer so Observers no longer receive notice of state changes in the Subject.
-&nbsp; &nbsp; &nbsp; &nbsp; * notify Observer: provide an implementation to notify Observers when a state change occurs in the Subject. 
+&nbsp; &nbsp; &nbsp; &nbsp; * register Observer: provide a means to enlist Observers to be notified when a change of state of the Subject occurs. <br>
+&nbsp; &nbsp; &nbsp; &nbsp; * remove Observer: provide a means to delist Observer so Observers no longer receive notice of state changes in the Subject. <br>
+&nbsp; &nbsp; &nbsp; &nbsp; * notify Observer: provide an implementation to notify Observers when a state change occurs in the Subject. <br>
 
 2.	**The Observer:** represents the dependents that would be receiving updates from the Subject.  This is implemented as an interface so that any concrete implementation represents an Observer object.  Only one method is implemented:
 * update: which defines how the Observer calls at the Subject to check if new information is available. 
