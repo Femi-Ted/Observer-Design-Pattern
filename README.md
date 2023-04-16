@@ -124,3 +124,6 @@ The class implements the “update” method of the Observer Interface.  It is t
 
 &nbsp; &nbsp; &nbsp; &nbsp;* Finally, the second subscriber is removed from the list of subscribers using the removeObserver method, and the service sends another newsletter. This time, only the remaining subscribers receive the newsletter because the second subscriber was removed. <br>
 
+
+## In conclusion:
+	
