@@ -92,7 +92,7 @@ The Observer Design Pattern adheres to the Solid Principles in many ways which a
 ## My code implementation can be explained thus: <br>
 1.	**the Observer Interface (Observer.java)**: has a single method “update”, that takes a “String” parameter representing the new newsletter that is available.  The Interface defines the behaviour that Observers/Subscribers use to receive updates when changes occur at the Subject.  The Subject is responsible for maintaining a list of observers, and when it’s state changes, it notifies all of its enlisted observers by calling the “update” method on each of them.  The “newsletter” parameter is a notification message that shows that the Observer has been notified of the new content.<br>
 
-```
+```java
 /**
  * This interface defines the behaviour which Observers/Subscribers use to receive updates on
  * changes at the Subject - when the state of the newsletters managed by the Subject changes.
@@ -114,7 +114,7 @@ public interface Observer {
 &nbsp; &nbsp; &nbsp; &nbsp;* “removeObserver” method: used to remove the Observer from the list of recipients who receive updates on new issues of newsletters. <br>
 &nbsp; &nbsp; &nbsp; &nbsp;* “notifyObservers” method: used to notifiy the Observers when a new issue/edition of the newsletter is available for dissemination.<br>
 
-```
+```java
 /**
  * This interface defines the actions that the Subject (Source) enforces on its subscribers
  * (the Observers/Receivers).
@@ -183,7 +183,7 @@ The class implements the “update” method of the Observer Interface.  It is t
 
 &nbsp; &nbsp; &nbsp; &nbsp;* Finally, the second subscriber is removed from the list of subscribers using the removeObserver method, and the service sends another newsletter. This time, only the remaining subscribers receive the newsletter because the second subscriber was removed. <br>
 
-```
+```java
 /**
  * Main class to demonstrate the operations of the Subject (the NewsletterSubscriptionService class)
  * and Observer (the NewsletterSubscriber class) in the Observer Design Pattern Presentation.
