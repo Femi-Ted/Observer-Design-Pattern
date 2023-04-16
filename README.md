@@ -75,7 +75,11 @@ The Observer Design Pattern adheres to the Solid Principles in many ways which a
 3.	It could cause severe memory leaks if Observers are not properly expunged from the list maintained by the Subject.  This memory leaks could be fatal to operation in large systems.
 
 
-![Screenshot 2023-04-16 at 00 00 25](https://user-images.githubusercontent.com/46625599/232278829-db8d281c-0bcf-41e1-8c51-1078c39459a8.png)
+
+CODE EXAMPLE:
+
+UML Diagram of Code Example:<br>
+![Screenshot 2023-04-16 at 00 00 25](https://user-images.githubusercontent.com/46625599/232278829-db8d281c-0bcf-41e1-8c51-1078c39459a8.png)<br>
 		_Figure 2: UML diagram of the Observer Design Pattern example provided._
 
 
