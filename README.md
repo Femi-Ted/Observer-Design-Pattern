@@ -1,6 +1,6 @@
 # Observer-Design-Pattern: 
 
-## A Design Pattern Presentation.
+## A Design Pattern Presentation Requirement for CS5004 (Spring 2023).
 
 
 ### **Introduction:**
@@ -125,5 +125,9 @@ The class implements the “update” method of the Observer Interface.  It is t
 &nbsp; &nbsp; &nbsp; &nbsp;* Finally, the second subscriber is removed from the list of subscribers using the removeObserver method, and the service sends another newsletter. This time, only the remaining subscribers receive the newsletter because the second subscriber was removed. <br>
 
 
-## In conclusion:
-	
+## Conclusion:
+The Observer Design Pattern is a useful software design pattern that allows for efficient communication between objects in a system. This pattern promotes loose coupling between objects and provides a way for objects to receive updates and notifications without being tightly coupled to the source of the updates. This makes it easier to add new objects to the system and modify the behavior of existing objects without causing significant impact to the system as a whole. The Observer Design Pattern is widely used in many software systems, and it is a pattern that every software developer should be familiar with.
+
+
+===========================================================
+You can check out the code implementation in the src folder.
