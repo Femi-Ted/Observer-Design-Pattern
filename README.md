@@ -205,6 +205,7 @@ public class NewsletterSubscriber implements Observer {
 &nbsp; &nbsp; &nbsp; &nbsp;* **notifyObservers()**: This method calls the notifyObservers(List<Observer> newObservers) method with three different observer lists - one for each subscription duration period - to ensure all registered observers are notified of the new newsletter. <br>
 &nbsp; &nbsp; &nbsp; &nbsp;* **notifyObservers(List<Observer> newObservers)**: This method notifies all registered observers by iterating through the list of observers and calling their update() method, passing in the new newsletter as a parameter. <br>
 
+
 <br>	
 5. 	**The driver class (Main)**: my implementation for the Observer Design Pattern comes together here to simulate a newsletter subscription service that sends newsletters to subscribers. The operations implemented is as follows: <br>
 
