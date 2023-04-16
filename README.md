@@ -183,6 +183,57 @@ The class implements the “update” method of the Observer Interface.  It is t
 
 &nbsp; &nbsp; &nbsp; &nbsp;* Finally, the second subscriber is removed from the list of subscribers using the removeObserver method, and the service sends another newsletter. This time, only the remaining subscribers receive the newsletter because the second subscriber was removed. <br>
 
+```
+/**
+ * Main class to demonstrate the operations of the Subject (the NewsletterSubscriptionService class)
+ * and Observer (the NewsletterSubscriber class) in the Observer Design Pattern Presentation.
+ */
+public class Main {
+
+  /**
+   * Driver.
+   * @param args system default argument at main.
+   */
+  public static void main(String[] args) {
+    // Create Subject.
+    NewsletterSubscriptionService newsletterService = new NewsletterSubscriptionService();
+
+    // Create Observer 1 (subscriber 1) into their subscription category.
+    NewsletterSubscriber subscriber1 = new NewsletterSubscriber(
+        "subscriber1@example.com", "3 months");
+    // Register Observer 1 (subscriber 1) to receive updates.
+    newsletterService.registerObserver(subscriber1);
+
+    // Create Observer 2 (subscriber 2) into their subscription category.
+    NewsletterSubscriber subscriber2 = new NewsletterSubscriber(
+        "subscriber2@example.com", "6 months");
+    // Registers Observer 2 (subscriber 2) to receive updates.
+    newsletterService.registerObserver(subscriber2);
+
+    // Create Observer 3 (subscriber 3) into their subscription category.
+    NewsletterSubscriber subscriber3 = new NewsletterSubscriber(
+        "subscriber3@example.com", "12 months");
+    // Registers Observer 3 (subscriber 3) to receive updates.
+    newsletterService.registerObserver(subscriber3);
+
+    // Send first issue of newletter to registered Observers.
+    System.out.println("\nFirst Newsletter issue release:");
+    newsletterService.setNewsletter("New Newsletter 1");
+
+    // Send second issue of newletter to registered Observers.
+    System.out.println("\nSecond Newsletter issue release:");
+    newsletterService.setNewsletter("New Newsletter 2");
+
+    // Observer 2 (subscriber 2) removed from receiving updates.
+    // Only registered Observers will gets updates.
+    System.out.println("\nThird Newsletter issue release but "
+        + "Subscriber 2 removed from receiving updates:");
+    newsletterService.removeObserver(subscriber2);
+    newsletterService.setNewsletter("New Newsletter 3");
+  }
+}
+```
+
 
 ## Conclusion:
 The Observer Design Pattern is a useful software design pattern that allows for efficient communication between objects in a system. This pattern promotes loose coupling between objects and provides a way for objects to receive updates and notifications without being tightly coupled to the source of the updates. This makes it easier to add new objects to the system and modify the behavior of existing objects without causing significant impact to the system as a whole. The Observer Design Pattern is widely used in many software systems, and it is a pattern that every software developer should be familiar with.
