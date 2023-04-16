@@ -79,7 +79,7 @@ The Observer Design Pattern adheres to the Solid Principles in many ways which a
 
 
 
-## **CODE EXAMPLE of the Implementation of the Observer Design Pattern:**
+## CODE EXAMPLE of the Implementation of the Observer Design Pattern:
 
 
 **UML Diagram of Code Example**:<br>
