@@ -131,3 +131,11 @@ The Observer Design Pattern is a useful software design pattern that allows for 
 
 ===========================================================<br>
 You can check out the code implementation in the src folder.
+
+
+
+
+
+
+## References:
+
