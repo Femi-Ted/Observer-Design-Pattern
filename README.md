@@ -18,12 +18,12 @@ This design pattern supports loose coupling between objects, making it easy to a
 
 ### **The key participants in the Observer Design Pattern:**
 1.	**The Subject:** the Subject keeps a detailed list of its dependents (the Observers/Subscribers) and notifies them of any changes to its state.  This is implemented as an interface so that any Concrete implementation represents the Object whose state would be required to change.  There are three important behaviour that all concrete implementations must provide:
-o	register Observer: provide a means to enlist Observers to be notified when a change of state of the Subject occurs.
-o	remove Observer: provide a means to delist Observer so Observers no longer receive notice of state changes in the Subject.
-o	notify Observer: provide an implementation to notify Observers when a state change occurs in the Subject. 
+* register Observer: provide a means to enlist Observers to be notified when a change of state of the Subject occurs.
+* remove Observer: provide a means to delist Observer so Observers no longer receive notice of state changes in the Subject.
+* notify Observer: provide an implementation to notify Observers when a state change occurs in the Subject. 
 
 2.	**The Observer:** represents the dependents that would be receiving updates from the Subject.  This is implemented as an interface so that any concrete implementation represents an Observer object.  Only one method is implemented:
-o	update: which defines how the Observer calls at the Subject to check if new information is available. 
+* update: which defines how the Observer calls at the Subject to check if new information is available. 
 Note: Implementation could vary depending on whether the Subject is to push updates to the Observers or if Observers would be fetching updates from the Subject.
 
 3.	**The Concrete Subject:** this is the concrete implementation of the Subject (the NewsletterSubscriptionService.java Class in my example) and is the object that sends notifications to the list of observers it manages when its state changes.
@@ -37,9 +37,9 @@ Check out figure 1 which details the relationship between the Subject and the Ob
 
 ### **Where the Observer Design Pattern in used in design:**
 The Observer Design Pattern provides a flexible way to send notifications to multiple objects at once and by this, reduces duplicate code and separates the notification code from the business or service logic of the entire application.  The Observer Design Pattern can be found:
-•	Useful in events handling in GUI implementations in the MVC Design Pattern. Specifically, it is found operational in the java.util.EventListener, in the EventListner Interface for Swing, where button clicks activates listeners to perform certain actions dependent on the update received from the Model [6].
-•	for creating dynamic and responsive user interfaces that communicates to users when program state changes.
-•	and various program notification systems.
+* useful in events handling in GUI implementations in the MVC Design Pattern. Specifically, it is found operational in the java.util.EventListener, in the EventListner Interface for Swing, where button clicks activates listeners to perform certain actions dependent on the update received from the Model [6].
+* for creating dynamic and responsive user interfaces that communicates to users when program state changes.
+* and various program notification systems.
 
 
 
