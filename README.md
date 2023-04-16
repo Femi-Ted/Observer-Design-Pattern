@@ -139,5 +139,5 @@ You can check out the code implementation in the src folder.
 
 ## References:
 
-[1] E. Gamma, R. Helm, R. Johnson, and J. Vlissides, "Observer," in Design Patterns: Elements of Reusable Object-Oriented Software, Reading, MA: Addison-Wesley Professional, 1994, pp. 293-304.
+[1] E. Gamma, R. Helm, R. Johnson, and J. Vlissides, "Observer," in Design Patterns: Elements of Reusable Object-Oriented Software, Reading, MA: Addison-Wesley Professional, 1994, pp. 293-304. <br>
 [2] Refactoring Guru, “Observer”. [Online]. Available: https://refactoring.guru/design-patterns/observer. [Accessed April-14-2023].
