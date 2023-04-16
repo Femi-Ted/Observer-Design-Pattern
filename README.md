@@ -79,13 +79,43 @@ The Observer Design Pattern adheres to the Solid Principles in many ways which a
 
 
 
-CODE EXAMPLE of the Implementation of the Observer Design Pattern:
+## **CODE EXAMPLE of the Implementation of the Observer Design Pattern:**
 
 
-UML Diagram of Code Example:<br>
+**UML Diagram of Code Example**:<br>
 ![Screenshot 2023-04-16 at 00 00 25](https://user-images.githubusercontent.com/46625599/232278829-db8d281c-0bcf-41e1-8c51-1078c39459a8.png)<br>
 		_Figure 2: UML diagram of the Observer Design Pattern example provided._
 
 
+## ** My code implementation can be explained thus: **
+1.	**the Observer Interface (Observer.java)**: has a single method “update”, that takes a “String” parameter representing the new newsletter that is available.  The Interface defines the behaviour that Observers/Subscribers use to receive updates when changes occur at the Subject.  The Subject is responsible for maintaining a list of observers, and when it’s state changes, it notifies all of its enlisted observers by calling the “update” method on each of them.  The “newsletter” parameter is a notification message that shows that the Observer has been notified of the new content.<br>
 
+2.	**the Subject Interface (Subject.java)**: this defines the actions that the Subject enforces on its subscribers/Observers.  There are four methods:<br>
+&nbsp; &nbsp; &nbsp; &nbsp;* “setNewsletter” method: used to set the newsletter to be sent to the Observers. <br>
+&nbsp; &nbsp; &nbsp; &nbsp;* “registerObserver” method: used to register an Observer with the service so that they can receive newsletters when new issues are released or changes occur at the Subject. <br>
+&nbsp; &nbsp; &nbsp; &nbsp;* “removeObserver” method: used to remove the Observer from the list of recipients who receive updates on new issues of newsletters. <br>
+&nbsp; &nbsp; &nbsp; &nbsp;* “notifyObservers” method: used to notifiy the Observers when a new issue/edition of the newsletter is available for dissemination.<br>
+
+3.	**The Concrete Implementation of the Observer Interface – (NewsletterSubscriber.java)**: which represents an “Observer object” that would receive updates from a “Subject” object (NewsletterSubscriptionService.java class) when its state changes.  My concrete implementation of the Observer Interface has two instance variables “newsletter” and “subscriptionDuration”, which holds the names of the newsletter to be disseminated and the subscriber’s subscription duration, respectively. It also has a constructor that takes in these two parameters and initializes the instance variables. <br>
+
+The class implements the “update” method of the Observer Interface.  It is this method the Subject calls when it has new information to disseminate to its Observers.  When a new Newsletter has been received, the update method prints a message indicating that along with the name of the newsletter, the subscription duration of the observer, and the message that was sent. <br>
+
+
+4. 	**The Concrete Implementation of the Subject Interface – (NewsletterSubscriptionService.java)**:  represents the “Subject object” and the service provider to which the Observers/Subscribers depend on to receive notifications when new newsletters become available.  It implements the following methods:<br>
+&nbsp; &nbsp; &nbsp; &nbsp;* **setNewsletter(String newsletter)**: This method sets the newsletter that will be disseminated to the observers and calls the notifyObservers() method to inform all registered observers. <br>
+&nbsp; &nbsp; &nbsp; &nbsp;* **registerObserver(Observer newObserver)**: This method registers the observer to the Newsletter Subscription Service with a default subscription duration of three months. <br>
+&nbsp; &nbsp; &nbsp; &nbsp;* **registerObserver(Observer newObserver, String subscriptionDuration)**: This is an overloaded method that allows an observer to be registered with a specified subscription duration (3 months, 6 months or 12 months).
+&nbsp; &nbsp; &nbsp; &nbsp;* **removeObserver(Observer newObserver)**: This method removes the observer from the list of recipients that will receive the newsletter updates. <br>
+&nbsp; &nbsp; &nbsp; &nbsp;* **notifyObservers()**: This method calls the notifyObservers(List<Observer> newObservers) method with three different observer lists - one for each subscription duration period - to ensure all registered observers are notified of the new newsletter. <br>
+&nbsp; &nbsp; &nbsp; &nbsp;* **notifyObservers(List<Observer> newObservers)**: This method notifies all registered observers by iterating through the list of observers and calling their update() method, passing in the new newsletter as a parameter. <br>
+
+5. 	**The driver class (Main)**: my implementation for the Observer Design Pattern comes together here to simulate a newsletter subscription service that sends newsletters to subscribers. The operations implemented is as follows: <br>
+
+&nbsp; &nbsp; &nbsp; &nbsp;* In the main method, it first creates an instance of NewsletterSubscriptionService, which acts as the Subject, and then creates three instances of NewsletterSubscriber, which act as the Observers/subscribers. <br>
+
+&nbsp; &nbsp; &nbsp; &nbsp;* Each of the subscribers has a different subscription duration (3, 6, or 12 months), and they are registered with the subscription service using the registerObserver method. <br>
+
+&nbsp; &nbsp; &nbsp; &nbsp;* Then, the service sends out two newsletters, and each subscriber receives them because they were registered. The newsletters are sent using the setNewsletter method of the service, which triggers the notifyObservers method, which sends the message to all registered observers. <br>
+
+&nbsp; &nbsp; &nbsp; &nbsp;* Finally, the second subscriber is removed from the list of subscribers using the removeObserver method, and the service sends another newsletter. This time, only the remaining subscribers receive the newsletter because the second subscriber was removed. <br>
 
