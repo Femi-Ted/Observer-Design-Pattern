@@ -198,6 +198,8 @@ public class NewsletterSubscriber implements Observer {
 
 <br>
 4. 	**The Concrete Implementation of the Subject Interface – (NewsletterSubscriptionService.java)**:  represents the “Subject object” and the service provider to which the Observers/Subscribers depend on to receive notifications when new newsletters become available.  It implements the following methods:<br>
+
+&nbsp; &nbsp; &nbsp; &nbsp;* **data structure instance attributes**: Subject uses this to keep the list of Observers. <br>
 &nbsp; &nbsp; &nbsp; &nbsp;* **setNewsletter(String newsletter)**: This method sets the newsletter that will be disseminated to the observers and calls the notifyObservers() method to inform all registered observers. <br>
 &nbsp; &nbsp; &nbsp; &nbsp;* **registerObserver(Observer newObserver)**: This method registers the observer to the Newsletter Subscription Service with a default subscription duration of three months. <br>
 &nbsp; &nbsp; &nbsp; &nbsp;* **registerObserver(Observer newObserver, String subscriptionDuration)**: This is an overloaded method that allows an observer to be registered with a specified subscription duration (3 months, 6 months or 12 months). <br>
