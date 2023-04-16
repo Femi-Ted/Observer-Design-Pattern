@@ -91,6 +91,22 @@ The Observer Design Pattern adheres to the Solid Principles in many ways which a
 <br>
 ## My code implementation can be explained thus: <br>
 1.	**the Observer Interface (Observer.java)**: has a single method “update”, that takes a “String” parameter representing the new newsletter that is available.  The Interface defines the behaviour that Observers/Subscribers use to receive updates when changes occur at the Subject.  The Subject is responsible for maintaining a list of observers, and when it’s state changes, it notifies all of its enlisted observers by calling the “update” method on each of them.  The “newsletter” parameter is a notification message that shows that the Observer has been notified of the new content.<br>
+'''
+/**
+ * This interface defines the behaviour which Observers/Subscribers use to receive updates on
+ * changes at the Subject - when the state of the newsletters managed by the Subject changes.
+ */
+public interface Observer {
+
+  /**
+   * Updates the observer/subscriber when new content/Newsletter is available.
+   * @param newsletter the notification to show that observer has been notified.
+   */
+  void update(String newsletter);
+}
+'''
+
+
 
 <br>
 2.	**the Subject Interface (Subject.java)**: this defines the actions that the Subject enforces on its subscribers/Observers.  There are four methods:<br>
